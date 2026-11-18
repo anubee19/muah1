@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever My Shikha ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    color: #853252;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+    radial-gradient(ellipse at 10% 10%, #fff0f6, transparent 40%),
+    radial-gradient(ellipse at 90% 90%, #ffc0d8, transparent 45%),
+    linear-gradient(135deg,#ffe6ef,#f8c5dc,#ffeaf2);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image: radial-gradient(#ffffffaa 1px,transparent 1px);
+    background-size: 35px 35px;
+}
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    padding: 85px 18px 55px;
+    text-align: center;
+    position: relative;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: pageEnter 1s ease;
+}
+
+@keyframes pageEnter {
+    from {opacity:0;transform:translateY(25px) scale(.98);}
+    to {opacity:1;transform:translateY(0) scale(1);}
+}
+
+h1 {
+    color: #c33e78;
+    font-size: clamp(34px,6vw,55px);
+    font-weight: 600;
+    text-shadow: 0 3px 15px #ffffffaa;
+    margin-bottom: 17px;
+}
+
+.script {
+    font-family: 'Great Vibes', cursive;
+    color: #c53676;
+    font-size: clamp(39px,7vw,65px);
+    margin: 10px 0;
+}
+
+h2 {
+    color: #b43e70;
+    font-size: clamp(22px,4vw,30px);
+    margin: 15px 0;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 680px;
+    margin: 10px auto;
+}
+
+button {
+    border: 1px solid #ffffffaa;
+    background: linear-gradient(135deg,#f48bb5,#ca427d);
+    color: white;
+    padding: 14px 29px;
+    border-radius: 35px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 14px;
+    letter-spacing: .5px;
+    cursor: pointer;
+    margin: 12px 5px;
+    box-shadow: 0 8px 25px #c7437c55;
+    transition: .35s;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 12px 30px #c7437c77;
+}
+
+/* OPENING PAGE */
+
+#opening {
+    background:
+    radial-gradient(circle at 50% 35%,
+    #fff9fc 0%, #ffd5e6 45%, #f8b7d2 100%);
+    overflow: hidden;
+}
+
+.opening-card {
+    position: relative;
+    background: #ffffff75;
+    border: 2px solid #ffffff;
+    backdrop-filter: blur(12px);
+    border-radius: 30px;
+    padding: 35px 24px;
+    max-width: 650px;
+    width: 100%;
+    box-shadow:
+    0 0 25px #ff8fbd80,
+    0 0 65px #e878a550,
+    inset 0 0 30px #ffffff70;
+}
+
+.opening-decor {
+    font-size: 25px;
+    letter-spacing: 8px;
+    margin: 15px 0;
+    animation: gentleGlow 3s infinite alternate;
+}
+
+@keyframes gentleGlow {
+    from {opacity:.65;transform:scale(.97);}
+    to {opacity:1;transform:scale(1.04);}
+}
+
+.big-heart {
+    font-size: 75px;
+    margin: 5px;
+    animation: heartbeat 1.4s infinite;
+    filter: drop-shadow(0 5px 15px #ed4e8c80);
+}
+
+.envelope {
+    font-size: 100px;
+    cursor: pointer;
+    animation: heartbeat 1.5s infinite;
+    filter: drop-shadow(0 10px 15px #d64c8a70);
+    margin: 15px;
+}
+
+@keyframes heartbeat {
+    0%,100% {transform:scale(1);}
+    50% {transform:scale(1.12);}
+}
+
+.small {
+    font-family: 'Poppins',sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #b75d84;
+}
+
+.divider-love {
+    color: #d34c84;
+    font-size: 22px;
+    margin: 15px;
+}
+
+#opening button {
+    padding: 17px 35px;
+    font-size: 15px;
+    background: linear-gradient(135deg,#ff9fc5,#d33c7c);
+    box-shadow: 0 0 20px #ed6ba580;
+}
+
+/* PHOTO GALLERY */
+
+.gallery {
+    width: 100%;
+    max-width: 510px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    align-items: center;
+}
+
+.photo {
+    width: 100%;
+    padding: 12px 12px 20px;
+    position: relative;
+    background: linear-gradient(145deg,#fff,#fff4f8);
+    border-radius: 5px;
+    box-shadow:
+    0 12px 30px #9e31513d,
+    0 0 0 1px #ffffff;
+    transition: .5s;
+    animation: photoFloat 4s ease-in-out infinite;
+}
+
+.photo:nth-child(1) {transform:rotate(-2deg);}
+.photo:nth-child(2) {transform:rotate(2deg);animation-delay:.6s;}
+.photo:nth-child(3) {transform:rotate(-1deg);animation-delay:1.2s;}
+
+@keyframes photoFloat {
+    0%,100% {translate:0 0;}
+    50% {translate:0 -7px;}
+}
+
+.photo:hover {
+    transform:rotate(0deg) scale(1.035);
+    z-index:3;
+    box-shadow:0 18px 40px #9e315166;
+}
+
+.photo::before {
+    content:"♥";
+    position:absolute;
+    top:-19px;
+    right:15px;
+    font-size:29px;
+    color:#e75b91;
+    text-shadow:0 3px 10px #e75b9180;
+    z-index:2;
+}
+
+.photo::after {
+    content:"✧";
+    position:absolute;
+    bottom:45px;
+    left:-14px;
+    font-size:32px;
+    color:#df82a8;
+}
+
+.photo img {
+    width:100%;
+    display:block;
+    aspect-ratio:4 / 5;
+    object-fit:cover;
+    border-radius:3px;
+    background:#f9dce8;
+}
+
+.photo span {
+    display:block;
+    padding:17px 5px 0;
+    font-family:'Great Vibes',cursive;
+    font-size:31px;
+    color:#bd4276;
+}
+
+.page-intro {
+    background:#ffffff60;
+    border:1px solid #ffffffa8;
+    border-radius:25px;
+    padding:22px;
+    max-width:670px;
+    width:100%;
+    box-shadow:0 8px 25px #c94e8020;
+}
+
+.page-number {
+    font-family:'Poppins',sans-serif;
+    letter-spacing:4px;
+    color:#b64a78;
+    font-size:12px;
+    padding:14px;
+}
+
+.progress {
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin:15px;
+}
+
+.progress span {
+    width:28px;
+    height:5px;
+    background:#ffffffa8;
+    border-radius:10px;
+}
+
+.progress span.done {
+    background:#d3487d;
+}
+
+/* MUSIC */
+
+.music {
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:20;
+    padding:11px 17px;
+    background:#fff9fc;
+    color:#b43e70;
+    border:1px solid #efb5cd;
+    font-size:12px;
+}
+
+/* FINAL PAGE */
+
+.final-card {
+    background:#ffffff80;
+    border:1px solid #ffffff;
+    backdrop-filter:blur(12px);
+    border-radius:30px;
+    padding:35px 25px;
+    max-width:680px;
+    box-shadow:0 15px 45px #bd4b7930;
+    margin:auto;
+}
+
+.final-heart {
+    font-size:85px;
+    animation:heartbeat 1.6s infinite;
+}
+
+.final-text {
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(39px,7vw,66px);
+    color:#c23b79;
+}
+
+/* FLOATING ANIMATIONS */
+
+#floating-container {
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:10;
+    overflow:hidden;
+}
+
+.floating {
+    position:absolute;
+    top:110%;
+    animation:floatUp linear forwards;
+    opacity:.85;
+}
+
+@keyframes floatUp {
+    to {
+        transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:480px) {
+    .gallery {max-width:340px;gap:30px;}
+    .photo {padding:8px 8px 15px;}
+    .photo span {font-size:27px;}
+    p {font-size:15px;}
+    .screen {padding-top:80px;}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music" id="musicBtn" onclick="toggleMusic()">
+🎵 Play Our Music
+</button>
+
+<div id="floating-container"></div>
+
+<!-- OPENING PAGE -->
+
+<section class="screen active" id="opening">
+
+<div class="opening-card">
+
+    <div class="opening-decor">🌹 ✨ 🦋 ✨ 🌹</div>
+
+    <div class="big-heart">💗</div>
+
+    <div class="envelope" onclick="openSurprise()">💌</div>
+
+    <p class="small">A LITTLE SURPRISE FOR SOMEONE VERY SPECIAL</p>
+
+    <div class="script">To My Forever Princess</div>
+
+    <h1>My Shikha ❤️</h1>
+
+    <div class="divider-love">♡ ───── ♥ ───── ♡</div>
+
+    <p>Heyyy beautiful! 🥹💕</p>
+
+    <p>
+    I wish I could wrap all my love into a thousand
+    little roses and give them to you. But for now,
+    I made this little corner of the internet just for you.
+    </p>
+
+    <p>
+    Twelve pictures, countless memories and one very
+    lucky person who gets to call you his princess. ❤️
+    </p>
+
+    <div class="script">Ready for a little magic?</div>
+
+    <button onclick="openSurprise()">
+    💌 Open Your Surprise 💌
+    </button>
+
+    <div class="opening-decor">💕 🌷 🧿 🌷 💕</div>
+
+    <p class="small">MADE WITH INFINITE LOVE, JUST FOR YOU</p>
+
+</div>
+</section>
+
+<!-- PRINCESS DAY WISH -->
+
+<section class="screen" id="wish">
+
+<div style="font-size:55px;">🌹 💗 🦋 👑</div>
+
+<div class="script">Happy National Princess Day</div>
+
+<h1>To My Shikha ❤️</h1>
+
+<p>
+If I had to choose my favourite person in every lifetime,
+in every universe and in every possible story...
+I would always find my way back to you.
+</p>
+
+<p>
+You deserve a world full of flowers, beautiful sunsets,
+endless laughter and all the love that exists.
+</p>
+
+<p>
+And if I could, I would make every single day
+feel like a fairytale for you.
+</p>
+
+<div class="script">You are my favourite fairytale. 💕</div>
+
+<button onclick="showPage(1)">Let's Begin Our Story →</button>
+
+</section>
+
+<!-- PAGE 1 -->
+
+<section class="screen" id="page1">
+
+<div class="page-intro">
+<div class="script">A Little Piece of My Heart</div>
+<h1>My Favourite Memories 💗</h1>
+<p>Every photograph holds a moment. Every moment holds a piece of my heart.</p>
+</div>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="photo1.jpeg" alt="Shikha photo 1">
+<span>My beautiful girl ❤️</span>
+</div>
+
+<div class="photo">
+<img src="photo2.jpeg" alt="Shikha photo 2">
+<span>That smile I adore 🥹</span>
+</div>
+
+<div class="photo">
+<img src="photo3.jpeg" alt="Shikha photo 3">
+<span>My favourite view 💋</span>
+</div>
+
+</div>
+
+<div class="page-number">LOVE STORY • 01 / 04</div>
+
+<div class="progress">
+<span class="done"></span><span></span><span></span><span></span>
+</div>
+
+<button onclick="showPage(2)">Turn the Page, My Love →</button>
+
+</section>
+
+<!-- PAGE 2 -->
+
+<section class="screen" id="page2">
+
+<div class="page-intro">
+<div class="script">You Make Me Smile</div>
+<h1>My Sunshine ☀️</h1>
+<p>Some people make the world beautiful just by being in it. You are that person for me.</p>
+</div>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="photo4.jpeg" alt="Shikha photo 4">
+<span>My forever princess 👑</span>
+</div>
+
+<div class="photo">
+<img src="photo5.jpeg" alt="Shikha photo 5">
+<span>My sunshine 🌷</span>
+</div>
+
+<div class="photo">
+<img src="photo6.jpeg" alt="Shikha photo 6">
+<span>My prettiest girl 💗</span>
+</div>
+
+</div>
+
+<div class="page-number">LOVE STORY • 02 / 04</div>
+
+<div class="progress">
+<span class="done"></span><span class="done"></span><span></span><span></span>
+</div>
+
+<button onclick="showPage(1)">← Previous</button>
+<button onclick="showPage(3)">Keep Going, Beautiful →</button>
+
+</section>
+
+<!-- PAGE 3 -->
+
+<section class="screen" id="page3">
+
+<div class="page-intro">
+<div class="script">If Beauty Had a Name...</div>
+<h1>It Would Be Yours 🌹</h1>
+<p>I could look at these memories a thousand times and still fall in love all over again.</p>
+</div>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="photo7.jpeg" alt="Shikha photo 7">
+<span>My happy place 💞</span>
+</div>
+
+<div class="photo">
+<img src="photo8.jpeg" alt="Shikha photo 8">
+<span>My favourite human 🫶</span>
+</div>
+
+<div class="photo">
+<img src="photo9.jpeg" alt="Shikha photo 9">
+<span>My forever love ❤️</span>
+</div>
+
+</div>
+
+<div class="page-number">LOVE STORY • 03 / 04</div>
+
+<div class="progress">
+<span class="done"></span><span class="done"></span><span class="done"></span><span></span>
+</div>
+
+<button onclick="showPage(2)">← Previous</button>
+<button onclick="showPage(4)">One More Page, Darling →</button>
+
+</section>
+
+<!-- PAGE 4 -->
+
+<section class="screen" id="page4">
+
+<div class="page-intro">
+<div class="script">And My Story Goes On...</div>
+<h1>My Forever Princess ❤️</h1>
+<p>These may be the last three pictures here, but I have a lifetime of memories I still want to make with you.</p>
+</div>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="photo10.jpeg" alt="Shikha photo 10">
+<span>My little world 🌎</span>
+</div>
+
+<div class="photo">
+<img src="photo11.jpeg" alt="Shikha photo 11">
+<span>My one and only 💋</span>
+</div>
+
+<div class="photo">
+<img src="photo12.jpeg" alt="Shikha photo 12">
+<span>Always you, Shikha 🧿</span>
+</div>
+
+</div>
+
+<div class="page-number">LOVE STORY • 04 / 04</div>
+
+<div class="progress">
+<span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span>
+</div>
+
+<button onclick="showPage(3)">← Previous</button>
+<button onclick="showFinal()">Read My Last Letter 💌</button>
+
+</section>
+
+<!-- FINAL LOVE LETTER -->
+
+<section class="screen" id="final">
+
+<div class="final-card">
+
+<div class="final-heart">❤️</div>
+
+<div class="script">My Dearest Shikha</div>
+
+<h1>One Last Thing...</h1>
+
+<p>
+I don't know what the future holds, but I know
+that you are someone I want beside me through all of it.
+</p>
+
+<p>
+I want to laugh with you, make silly memories with you,
+annoy you, pamper you, hold your hand and remind you
+every day how special you are.
+</p>
+
+<p>
+You are not just a beautiful part of my life.
+You are one of my favourite reasons to smile.
+</p>
+
+<div style="font-size:40px;margin:20px;">🌹 🦋 💋</div>
+
+<div class="final-text">I Love You, My Shikha</div>
+
+<h2>Always & Forever ❤️</h2>
+
+<p class="small">
+IN EVERY LIFETIME, I WOULD STILL CHOOSE YOU.
+</p>
+
+<div style="font-size:35px;margin:20px;">🧿💕🌷</div>
+
+<button onclick="showPage(1)">Relive Our Love Story ↻</button>
+
+</div>
+</section>
+
+<script>
+
+// PAGE NAVIGATION
+
+function showScreen(id) {
+    document.querySelectorAll('.screen').forEach(s => {
+        s.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+
+    window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function openSurprise() {
+    showScreen('wish');
+    playMusic();
+}
+
+function showPage(n) {
+    showScreen('page' + n);
+}
+
+function showFinal() {
+    showScreen('final');
+}
+
+// MUSIC
+
+function playMusic() {
+    const music = document.getElementById('music');
+
+    music.play().then(() => {
+        document.getElementById('musicBtn').innerText =
+        '🎵 Pause Music';
+    }).catch(() => {
+        document.getElementById('musicBtn').innerText =
+        '🎵 Play Music';
+    });
+}
+
+function toggleMusic() {
+    const music = document.getElementById('music');
+
+    if(music.paused) {
+        playMusic();
+    } else {
+        music.pause();
+        document.getElementById('musicBtn').innerText =
+        '🎵 Play Our Music';
+    }
+}
+
+// FLOATING HEARTS, ROSES AND BUTTERFLIES
+
+const decorations = [
+    '❤️','💕','🦋','💗','🌹',
+    '✨','🌸','💋','🌷','💖',
+    '🩷','💞','🥀'
+];
+
+function createFloating() {
+    const item = document.createElement('div');
+
+    item.className = 'floating';
+
+    item.innerText =
+    decorations[Math.floor(Math.random()*decorations.length)];
+
+    item.style.left = Math.random()*100 + 'vw';
+
+    item.style.fontSize =
+    (18 + Math.random()*25) + 'px';
+
+    const duration = 7 + Math.random()*7;
+
+    item.style.animationDuration = duration + 's';
+
+    document.getElementById('floating-container')
+    .appendChild(item);
+
+    setTimeout(() => item.remove(),duration*1000);
+}
+
+setInterval(createFloating,450);
+
+</script>
+
+</body>
+</html>
